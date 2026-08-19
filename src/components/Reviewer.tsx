@@ -11,6 +11,7 @@ const criteria = [
 export default function Reviewer() {
   return (
     <section id="reviewer" className="relative py-24 md:py-32">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -19,12 +20,15 @@ export default function Reviewer() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="font-mono text-xs tracking-widest text-amber-400 mb-4">// 02 · THE AUTOMATED REVIEWER</p>
-          <h2 className="font-display text-5xl md:text-7xl tracking-tight max-w-3xl">
-            A vision model checks every render.
+          <div className="mb-5 flex items-center gap-3">
+            <span className="font-display text-6xl text-stone-800 leading-none">02</span>
+            <span className="font-mono text-xs tracking-widest text-amber-400">REVIEW</span>
+          </div>
+          <h2 className="font-display text-5xl md:text-7xl tracking-tight max-w-3xl text-[#f6efe4]">
+            Something looks at every frame before you do.
           </h2>
           <p className="mt-5 max-w-2xl text-stone-400 text-base leading-relaxed">
-            The reviewer compares every render to the sheets it was supposed to match, returns a per-criterion verdict, and re-renders hard failures on a fixed budget. You see the critic working — not just the result.
+            Each render is compared against the sheets it was supposed to match — by a model that actually looks, not a checkbox. Clips are sampled at the head and the tail, so a face that morphs halfway through a shot gets caught instead of passing on frame one. A hard failure is re-rendered automatically, inside a budget you set.
           </p>
         </motion.div>
 
@@ -92,16 +96,6 @@ export default function Reviewer() {
             </div>
           </div>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-auto mt-8 max-w-2xl text-center text-sm leading-relaxed text-stone-500"
-        >
-          The reviewer runs on a fixed re-render budget — it won't loop forever on a bad frame. If it can't fix it within budget, it flags the shot for your decision instead of burning credits silently.
-        </motion.p>
       </div>
     </section>
   );

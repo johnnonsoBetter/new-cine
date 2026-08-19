@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { PenLine, Lock, Image, Film, ChevronRight, Check, DollarSign } from 'lucide-react';
+import { PenLine, Lock, Image, Film, ChevronRight, DollarSign } from 'lucide-react';
 
 const gates = [
   {
     num: '01',
     icon: PenLine,
     title: 'Write',
-    description: 'Type a story idea. CineForge writes the screenplay — scenes, slug lines, dialogue, and stage directions.',
+    description: 'The writing pass settles everything — the story, the cast, the breakdown, and every prompt the later passes will spend. What comes after is mechanical: read a prompt, send it.',
     cost: 'Text generation',
     costType: 'free',
     gate: 'You open the gate to generate sheets.',
@@ -43,6 +43,7 @@ const gates = [
 export default function FourGates() {
   return (
     <section id="gates" className="relative py-24 md:py-32">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,12 +52,15 @@ export default function FourGates() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="font-mono text-xs tracking-widest text-amber-400 mb-4">// 04 · FOUR GATED PASSES</p>
-          <h2 className="font-display text-5xl md:text-7xl tracking-tight max-w-3xl">
-            No pass starts itself.
+          <div className="mb-5 flex items-center gap-3">
+            <span className="font-display text-6xl text-stone-800 leading-none">04</span>
+            <span className="font-mono text-xs tracking-widest text-amber-400">CONTROL</span>
+          </div>
+          <h2 className="font-display text-5xl md:text-7xl tracking-tight max-w-3xl text-[#f6efe4]">
+            Four passes. You open every one.
           </h2>
           <p className="mt-5 max-w-2xl text-stone-400 text-base leading-relaxed">
-            Write → Sheets → Frames → Motion. A human opens every gate. You see what each pass costs before you start it, and nothing runs until you click through.
+            The writing pass settles everything — the story, the cast, the breakdown, and every prompt the later passes will spend. What comes after is mechanical: read a prompt, send it. Each pass stops for you before the next one starts, so a wrong character sheet costs one re-render here instead of a whole film of the wrong person.
           </p>
         </motion.div>
 
@@ -111,17 +115,6 @@ export default function FourGates() {
             ))}
           </div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-10 flex items-center justify-center gap-3 font-mono text-[10px] tracking-wider text-stone-500"
-        >
-          <Check className="h-3.5 w-3.5 text-emerald-400" />
-          EVERY GATE IS A HUMAN DECISION · NO BACKGROUND RENDERS WITHOUT CONSENT
-        </motion.div>
       </div>
     </section>
   );

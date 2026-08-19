@@ -4,6 +4,7 @@ import { ArrowRight, ArrowLeft, FileOutput, FileInput, AlertCircle, Check, X } f
 export default function WorksWithTools() {
   return (
     <section id="tools" className="relative py-24 md:py-32 bg-ink-900/30">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -12,12 +13,15 @@ export default function WorksWithTools() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="font-mono text-xs tracking-widest text-amber-400 mb-4">// 05 · WORKS WITH YOUR TOOLS</p>
-          <h2 className="font-display text-5xl md:text-7xl tracking-tight max-w-3xl">
-            Send a brief. Take it back.
+          <div className="mb-5 flex items-center gap-3">
+            <span className="font-display text-6xl text-stone-800 leading-none">05</span>
+            <span className="font-mono text-xs tracking-widest text-amber-400">OPEN</span>
+          </div>
+          <h2 className="font-display text-5xl md:text-7xl tracking-tight max-w-3xl text-[#f6efe4]">
+            Made it somewhere else? Bring it in.
           </h2>
           <p className="mt-5 max-w-2xl text-stone-400 text-base leading-relaxed">
-            Any shot can leave as a labelled brief for Midjourney, Kling, or ChatGPT — and the result can come back in as a real version. It's still judged against the same sheets.
+            Any shot can leave as a brief — the prompt, plus every reference image under a heading that says what it is and what the other tool has to do with it. Make the frame wherever you like. Drop it back on the card and it becomes a take like any other: checked against the same sheets, swappable against the render it replaced, cut into the same film.
           </p>
         </motion.div>
 
@@ -107,16 +111,20 @@ export default function WorksWithTools() {
           </motion.div>
         </div>
 
+        {/* Callout box — verbatim */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mx-auto mt-10 max-w-3xl rounded-xl border border-amber-400/15 bg-amber-400/[0.03] p-5 text-center"
+          className="mx-auto mt-10 max-w-3xl rounded-xl border border-amber-400/15 bg-amber-400/[0.03] p-5"
         >
-          <p className="text-sm leading-relaxed text-stone-400">
-            <span className="font-semibold text-amber-300">Imported assets are marked as imported and never claim verification.</span> The reviewer still checks them against the same sheets — but the provenance tag stays on the frame so you always know what came from outside.
-          </p>
+          <div className="flex items-start gap-3">
+            <AlertCircle className="h-5 w-5 shrink-0 text-amber-400" strokeWidth={1.5} />
+            <p className="text-sm leading-relaxed text-stone-400">
+              <span className="font-semibold text-amber-300">Imported assets are labelled imported and never claim verification.</span> We would rather tell you where a frame came from than pretend we made it.
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

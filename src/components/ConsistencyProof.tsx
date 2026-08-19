@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Lock, Link2, Check, X } from 'lucide-react';
+import { Lock, Link2, Check } from 'lucide-react';
 
 const frames = [
   { scene: 'SCENE 01', shot: 'Medium · Day', img: 'https://images.pexels.com/photos/18393751/pexels-photo-18393751.jpeg?auto=compress&cs=tinysrgb&w=400' },
@@ -11,6 +11,7 @@ const frames = [
 export default function ConsistencyProof() {
   return (
     <section id="consistency" className="relative py-24 md:py-32 bg-ink-900/30">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -19,12 +20,15 @@ export default function ConsistencyProof() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="font-mono text-xs tracking-widest text-amber-400 mb-4">// 01 · LOCKED REFERENCE SHEETS</p>
-          <h2 className="font-display text-5xl md:text-7xl tracking-tight max-w-3xl">
-            Faces don't drift between shots.
+          <div className="mb-5 flex items-center gap-3">
+            <span className="font-display text-6xl text-stone-800 leading-none">01</span>
+            <span className="font-mono text-xs tracking-widest text-amber-400">CONSISTENCY</span>
+          </div>
+          <h2 className="font-display text-5xl md:text-7xl tracking-tight max-w-3xl text-[#f6efe4]">
+            Your cast keeps their face.
           </h2>
           <p className="mt-5 max-w-2xl text-stone-400 text-base leading-relaxed">
-            Before any shot is rendered, CineForge generates a reference sheet for every character and a plate for every location, then locks them. Every later frame is generated from those images and checked against them.
+            Before a single shot is rendered, CineForge builds a reference sheet for every character and a plate for every location, then locks them. Every frame after that is generated from those locked images — and reviewed against them. New scene, new angle, new light: same person.
           </p>
         </motion.div>
 

@@ -3,11 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Clapperboard, Menu, X } from 'lucide-react';
 
 const links = [
-  { label: 'Proof', href: '#consistency' },
-  { label: 'Reviewer', href: '#reviewer' },
+  { label: 'Consistency', href: '#consistency' },
+  { label: 'Review', href: '#reviewer' },
   { label: 'Cost', href: '#free-vs-paid' },
-  { label: 'Gates', href: '#gates' },
-  { label: 'Gallery', href: '#showcase' },
+  { label: 'Control', href: '#gates' },
+  { label: 'Open', href: '#tools' },
+  { label: 'Record', href: '#provenance' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
 ];
